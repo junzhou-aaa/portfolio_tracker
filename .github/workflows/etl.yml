@@ -1,0 +1,30 @@
+name: Daily PostHog to Neon ETL
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # 每天 UTC 02:00 (斯德哥尔摩凌晨 04:00) 自动触发
+  workflow_dispatch:      # 允许你在 GitHub 网页端手动点击运行
+
+jobs:
+  run-etl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run ETL Script
+        env:
+          POSTHOG_API_KEY: ${{ secrets.POSTHOG_API_KEY }}
+          POSTHOG_PROJECT_ID: ${{ secrets.POSTHOG_PROJECT_ID }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: python etl_posthog_to_neon.py
