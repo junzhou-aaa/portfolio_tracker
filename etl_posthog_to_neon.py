@@ -6,6 +6,9 @@ from sqlalchemy import create_engine, Column, String, DateTime
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.orm import declarative_base, sessionmaker
+from dotenv import load_dotenv
+
+load_dotenv(".env.local")
 
 # 1. 环境变量读取
 POSTHOG_API_KEY = os.environ["POSTHOG_API_KEY"]

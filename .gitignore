@@ -5,3 +5,5 @@ node_modules/
 .DS_Store
 __pycache__/
 *.pyc
+chroma.sqlite3
+[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]-*
