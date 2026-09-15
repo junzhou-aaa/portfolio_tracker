@@ -38,7 +38,7 @@ The core fact table `analytics_events` is structured as follows:
 1. **Clone the repository and install dependencies:**
    ```bash
    git clone https://github.com/YourUsername/wix-portfolio-tracker.git
-   cd wix-portfolio-tracker
+   cd /Users/zhoujun/.gemini/antigravity/scratch/wix-portfolio-tracker
    pip install -r requirements.txt
    ```
 
