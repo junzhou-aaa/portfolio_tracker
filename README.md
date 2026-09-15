@@ -54,6 +54,8 @@ The core fact table `analytics_events` is structured as follows:
    export POSTHOG_PROJECT_ID="12345"
    export DATABASE_URL="postgresql://..."
    python etl_posthog_to_neon.py
+   # if you have set up Github Actions, only need to run
+   python text_to_sql_app.py
    ```
 
 ## Future Roadmap
