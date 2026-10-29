@@ -1,5 +1,6 @@
 requests
 psycopg2-binary
+psycopg[binary]
 pydantic
 sqlalchemy
 vanna[chromadb]<2.0.0
